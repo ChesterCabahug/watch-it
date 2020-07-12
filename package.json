@@ -1,0 +1,23 @@
+{
+  "name": "watch-it",
+  "version": "1.0.0",
+  "description": "a nodemon like application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChesterCabahug/watch-it.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChesterCabahug/watch-it/issues"
+  },
+  "homepage": "https://github.com/ChesterCabahug/watch-it#readme",
+  "bin": {
+    "watchit": "index.js"
+  }
+}

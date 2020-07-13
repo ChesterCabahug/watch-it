@@ -17,7 +17,7 @@ program
         }
 
         const start = debounce(() => {
-            spawn("node", [name], {stdio: "inherit"})
+            spawn("node", [name])
         }, 100)
         
         chokidar

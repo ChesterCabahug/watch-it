@@ -3,6 +3,7 @@ const debounce = require("lodash.debounce") // named debounce instead of lodashD
 const chokidar = require("chokidar") //named chokidar since it's a simple program
 const program = require("caporal") //named program because the documentation says so
 const fs = require("fs")
+const { spawn } = require("child_process")
 
 program
     .version("0.0.1")
@@ -16,7 +17,7 @@ program
         }
 
         const start = debounce(() => {
-            console.log("Starting user's program")
+            spawn("node", [name], {stdio: "inherit"})
         }, 100)
         
         chokidar

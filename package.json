@@ -19,5 +19,8 @@
   "homepage": "https://github.com/ChesterCabahug/watch-it#readme",
   "bin": {
     "watchit": "index.js"
+  },
+  "dependencies": {
+    "chokidar": "^3.4.0"
   }
 }

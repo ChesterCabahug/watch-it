@@ -3,12 +3,21 @@ const debounce = require("lodash.debounce") // named debounce instead of lodashD
 const chokidar = require("chokidar") //named chokidar since it's a simple program
 const program = require("caporal") //named program because the documentation says so
 
-const start = debounce(() => {
-    console.log("Starting user's program")
-}, 100)
+program
+    .version("0.0.1")
+    .argument("[filename]", "Name of a file to execute")
+    .action((args) => {
+        console.log(args)
+    })
 
-chokidar
-    .watch(".")
-    .on("add", start)
-    .on("change", () => console.log("File changed"))
-    .on("unlink", () => console.log("File unlinked"))
+program.parse(process.argv)
+
+// const start = debounce(() => {
+//     console.log("Starting user's program")
+// }, 100)
+
+// chokidar
+//     .watch(".")
+//     .on("add", start)
+//     .on("change", () => console.log("File changed"))
+//     .on("unlink", () => console.log("File unlinked"))

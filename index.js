@@ -4,6 +4,7 @@ const chokidar = require("chokidar") //named chokidar since it's a simple progra
 const program = require("caporal") //named program because the documentation says so
 const fs = require("fs")
 const { spawn } = require("child_process")
+const chalk = require("chalk")
 
 program
     .version("0.0.1")
@@ -16,8 +17,13 @@ program
             throw new Error(`Could not find the file ${name}`)
         }
 
+        let proc;
         const start = debounce(() => {
-            spawn("node", [name])
+            if (proc) {
+                proc.kill()
+            }
+            console.log(chalk.bgCyan(">>>> Starting process"))
+            proc = spawn("node", [name], {stdio: "inherit"})
         }, 100)
         
         chokidar
